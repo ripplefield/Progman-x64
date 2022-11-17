@@ -1522,6 +1522,7 @@ PITEM PASCAL CreateNewItem(
 		lstrcpy(szIconExe, lpCommand);
 	}
 	DoEnvironmentSubst(szIconExe, (WORD)CharSizeOf(szIconExe));
+	PathQuoteSpacesW(szIconExe);
 	StripArgs(szIconExe);
 	if (!bNoIconPath) {
 		TagExtension(szIconExe, sizeof(szIconExe));
